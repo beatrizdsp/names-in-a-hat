@@ -14,19 +14,19 @@ const NamesAdder = ({ names, setNamesList }) => {
     } else {
       //   console.log(`Submitting ${input}`);
       setNamesList(() => {
-        return [...names, { id: names.length + 1, name: input }];
+        return [...names, { id: names.length + 1, name: input.toUpperCase() }];
       });
       setInput("");
     }
   };
 
   return (
-    <div>
+    <div className="form-wrapper">
       <form onSubmit={handleSubmit}>
         <label htmlFor="name-input" />
         <input
           type="text"
-          placeholder="John Doe"
+          placeholder="ENTER NAME HERE..."
           id="name-input"
           value={input}
           onChange={updateInput}
